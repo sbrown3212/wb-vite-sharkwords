@@ -1,3 +1,7 @@
+// QUESTION: would I want to create a module for each of these functions?
+// Or since they are related to restarting the game, is it better to have them in the same module?
+
+// QUESTION: is there a better way to be able to have access to call initSharkwords() than to import it?
 import initSharkwords from "./main.js";
 
 function generateRestartBtn(cb) {

@@ -3,7 +3,7 @@ import getRandomWord from './src/randomWord.js';
 import setSharkImage from './src/sharkImage.js';
 import { setupWord, isLetterInWord, revealLetterInWord } from './src/word.js';
 import setupGuesses from './src/guess.js';
-import { generateRestartBtn, restartGame } from './restart.js';
+import { generateRestartBtn } from './restart.js';
 
 
 document.querySelector('#app').innerHTML = `
