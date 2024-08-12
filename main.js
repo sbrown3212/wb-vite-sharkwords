@@ -3,6 +3,7 @@ import getRandomWord from './src/randomWord.js';
 import setSharkImage from './src/sharkImage.js';
 import { setupWord, isLetterInWord, revealLetterInWord } from './src/word.js';
 import setupGuesses from './src/guess.js';
+import { generateRestartBtn, restartGame } from './restart.js';
 
 
 document.querySelector('#app').innerHTML = `
@@ -24,9 +25,9 @@ const initSharkwords = () => {
   setSharkImage(document.querySelector('#shark-img'), numWrong);
 
   // reset game status, word container, and letters 
-  document.querySelector('#game-status').innerText = '';
-  document.querySelector('#word-container').innerText = '';
-  document.querySelector('#letter-buttons').innerHTML = '';
+  // document.querySelector('#game-status').innerText = '';
+  // document.querySelector('#word-container').innerText = '';
+  // document.querySelector('#letter-buttons').innerHTML = '';
 
   setupWord(document.querySelector('#word-container'), word);
 
@@ -48,26 +49,30 @@ const initSharkwords = () => {
       document.querySelector('#game-status').innerText = `You win!`;
       document.querySelectorAll('button').forEach((button) => button.setAttribute('disabled', true))
 
-      restartButton();
+      // restartButton()
+      generateRestartBtn();
     }
     
     if (numWrong >= 5) {
       document.querySelector('#game-status').innerText = `You lose!`;
       document.querySelectorAll('button').forEach((button) => button.setAttribute('disabled', true))
       
-      restartButton()
+      // restartButton()
+      generateRestartBtn()
     }
   };
 
   setupGuesses(document.querySelector('#letter-buttons'), handleGuess)
 };
 
-function restartButton() {
-  const button = document.createElement('button');
-  button.innerText = 'Restart';
-  button.id = 'restart'
-  button.addEventListener('click', initSharkwords)
-  document.querySelector('#game-status').appendChild(button)
-}
+// function restartButton() {
+//   const button = document.createElement('button');
+//   button.innerText = 'Restart';
+//   button.id = 'restart'
+//   button.addEventListener('click', initSharkwords)
+//   document.querySelector('#game-status').appendChild(button)
+// }
 
 initSharkwords();
+
+export default initSharkwords;
