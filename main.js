@@ -39,7 +39,12 @@ const initSharkwords = () => {
 
     if (isWordComplete) {
       document.querySelector('#game-status').innerText = `You win!`;
-      document.querySelectorAll('button').forEach((letterBox) => letterBox.setAttribute('disabled', true))
+      document.querySelectorAll('button').forEach((button) => button.setAttribute('disabled', true))
+    }
+    
+    if (numWrong >= 5) {
+      document.querySelector('#game-status').innerText = `You lose!`;
+      document.querySelectorAll('button').forEach((button) => button.setAttribute('disabled', true))
     }
   };
 
