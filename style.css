@@ -47,3 +47,8 @@ button {
 button[disabled='true'] {
   cursor: default;
 }
+
+#restart {
+  width: auto;
+  align-self: center;
+}
